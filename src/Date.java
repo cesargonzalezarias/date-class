@@ -13,6 +13,12 @@ public class Date {
 		this.year = 2019;
 	}
 	
+	public Date(Date other){
+		this.day = other.getDay();
+		this.month = other.getMonth();
+		this.year = other.getYear();
+	}
+	
 	public Date(int day, int month, int year) throws DateException{
 		
 		StringBuffer message = new StringBuffer();
@@ -83,6 +89,30 @@ public class Date {
 			throw new DateException("Negative years are not allowed.\n");			
 		} else {
 			this.year = year;
+		}
+	}
+	
+	public boolean isSameDay(Date other){
+		if ( this.day == other.getDay() ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean isSameMonth(Date other){
+		if ( this.month == other.getMonth() ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean isSameYear(Date other){
+		if ( this.year == other.getYear() ) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
