@@ -116,7 +116,108 @@ public class Date {
 		}
 	}
 
+	public String getMonthName(){
+		
+		String name = null;
+		switch (this.month){
+		case 1:
+			name = "January";
+			break;
+		case 2:
+			name = "February";
+			break;
+		case 3:
+			name = "March";
+			break;
+		case 4:
+			name = "April";
+			break;
+		case 5:
+			name = "May";
+			break;
+		case 6:
+			name = "June";
+			break;
+		case 7:
+			name = "July";
+			break;
+		case 8:
+			name = "August";
+			break;
+		case 9:
+			name = "September";
+			break;
+		case 10:
+			name = "October";
+			break;
+		case 11:
+			name = "November";
+			break;
+		case 12:
+			name = "December";
+			break;
+		}
+		return name;
+	}
+	
+	public int daysOfMonth(int month){
+		int number = 0;
+		switch (this.month){
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+				number = 31;
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				number = 30;
+				break;
+			case 2:
+				number = 28;
+				break;
+			default:
+				number = -1;
+				break;
+		}
+		return number;
+	}
 
+	public int daysOfMonth(){
+		return daysOfMonth(this.month);
+	}
+
+	public String getSeasonName(){
+		String name = null;
+		switch (this.month){
+			case 12:
+			case 1:
+			case 2: 
+				name = "Winter";
+				break;
+			case 3:
+			case 4:
+			case 5:
+				name = "Spring";
+				break;
+			case 6:
+			case 7:
+			case 8:
+				name = "Summer";
+				break;
+			case 9:
+			case 10:
+			case 11:
+				name = "Autumn";
+				break;
+		}
+		return name;
+	}
 
 
 }
